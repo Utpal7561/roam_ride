@@ -1,0 +1,256 @@
+/* Rome & Ride Custom Stylesheet — Mobile First */
+:root {
+  --rnr-yellow: #FFE500;
+  --rnr-yellow-hover: #E5CD00;
+  --rnr-yellow-light: rgba(255, 229, 0, 0.12);
+  --rnr-red: #EF4444;
+  --rnr-red-hover: #DC2626;
+  --rnr-red-light: rgba(239, 68, 68, 0.12);
+  --rnr-black: #09090B;
+  --rnr-dark: #121215;
+  --rnr-surface: #18181B;
+  --rnr-surface-light: #222226;
+  --rnr-border: #27272A;
+  --rnr-text-main: #FFFFFF;
+  --rnr-text-muted: #A1A1AA;
+  --rnr-radius-sm: 8px;
+  --rnr-radius-md: 12px;
+  --rnr-radius-lg: 18px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--rnr-black);
+}
+::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--rnr-yellow);
+}
+
+body {
+  background-color: var(--rnr-black);
+  color: var(--rnr-text-main);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Yellow Highlights and Glow */
+.text-yellow-brand {
+  color: var(--rnr-yellow) !important;
+}
+.bg-yellow-brand {
+  background-color: var(--rnr-yellow) !important;
+}
+.border-yellow-brand {
+  border-color: var(--rnr-yellow) !important;
+}
+.glow-yellow {
+  box-shadow: 0 0 20px rgba(255, 229, 0, 0.25);
+}
+.glow-yellow-sm {
+  box-shadow: 0 0 10px rgba(255, 229, 0, 0.15);
+}
+
+/* Red Accents */
+.text-red-brand {
+  color: var(--rnr-red) !important;
+}
+.bg-red-brand {
+  background-color: var(--rnr-red) !important;
+}
+.border-red-brand {
+  border-color: var(--rnr-red) !important;
+}
+
+/* Card Styling */
+.rnr-card {
+  background-color: var(--rnr-surface);
+  border: 1px solid var(--rnr-border);
+  border-radius: var(--rnr-radius-md);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.rnr-card:hover {
+  border-color: rgba(255, 229, 0, 0.4);
+}
+.rnr-card-active {
+  border-color: var(--rnr-yellow);
+  box-shadow: 0 0 15px rgba(255, 229, 0, 0.15);
+}
+
+/* Primary Button */
+.btn-rnr-primary {
+  background-color: var(--rnr-yellow);
+  color: #000000;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: var(--rnr-radius-sm);
+  padding: 12px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+.btn-rnr-primary:hover {
+  background-color: var(--rnr-yellow-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(255, 229, 0, 0.3);
+}
+
+/* Secondary Button */
+.btn-rnr-secondary {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 1px solid var(--rnr-border);
+  font-weight: 600;
+  border-radius: var(--rnr-radius-sm);
+  padding: 11px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.btn-rnr-secondary:hover {
+  border-color: var(--rnr-yellow);
+  color: var(--rnr-yellow);
+  background-color: rgba(255, 229, 0, 0.05);
+}
+
+/* Red Urgent Action Button */
+.btn-rnr-accent {
+  background-color: var(--rnr-red);
+  color: #FFFFFF;
+  font-weight: 700;
+  border-radius: var(--rnr-radius-sm);
+  padding: 12px 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+.btn-rnr-accent:hover {
+  background-color: var(--rnr-red-hover);
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+/* Input Styles */
+.rnr-input {
+  background-color: var(--rnr-dark);
+  border: 1px solid var(--rnr-border);
+  color: #FFFFFF;
+  border-radius: var(--rnr-radius-sm);
+  padding: 12px 14px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.rnr-input:focus {
+  outline: none;
+  border-color: var(--rnr-yellow);
+  box-shadow: 0 0 0 2px rgba(255, 229, 0, 0.2);
+}
+.rnr-input::placeholder {
+  color: #71717A;
+}
+
+/* Badges */
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.badge-confirmed, .badge-available, .badge-successful, .badge-approved, .badge-paid {
+  background-color: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+.badge-pending, .badge-pending_approval, .badge-pending_booking, .badge-pending_payment, .badge-under_review, .badge-partial, .badge-reserved {
+  background-color: rgba(234, 179, 8, 0.15);
+  color: #facc15;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}
+.badge-cancelled, .badge-rejected, .badge-failed, .badge-out_of_service {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+.badge-active, .badge-rental_active {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+.badge-maintenance {
+  background-color: rgba(249, 115, 22, 0.15);
+  color: #fb923c;
+  border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+/* Mobile Sticky Bottom Bar */
+.mobile-sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(18, 18, 21, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--rnr-border);
+  padding: 12px 16px;
+  z-index: 50;
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 229, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 229, 0, 0.5);
+  }
+}
+.pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Hero Pattern Background */
+.hero-pattern {
+  background-image: radial-gradient(rgba(255, 229, 0, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
