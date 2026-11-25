@@ -1,0 +1,9 @@
+{
+  "name": "roam_ride/platform",
+  "description": "Rome & Ride — Pick. Ride. Explore. Production Vehicle Rental Platform",
+  "type": "project",
+  "license": "proprietary",
+  "require": {
+    "php": ">=8.1"
+  }
+}

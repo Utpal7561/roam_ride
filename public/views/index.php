@@ -11,9 +11,10 @@ $reqUri = $_SERVER['REQUEST_URI'] ?? '/';
 if (str_contains($reqUri, '/public')) {
     $scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? ''));
     $baseHref = rtrim($scriptDir, '/') . '/';
+} elseif (str_contains($reqUri, '/roam_ride')) {
+    $baseHref = '/roam_ride/';
 } else {
-    $folder = defined('ROOT_PATH') ? basename(ROOT_PATH) : 'roam_ride';
-    $baseHref = '/' . trim($folder, '/') . '/';
+    $baseHref = '/';
 }
 if ($baseHref === '//') $baseHref = '/';
 

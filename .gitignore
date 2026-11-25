@@ -1,0 +1,15 @@
+# Environment variables (keep local credentials private)
+.env
+
+# Scratch and temporary test scripts
+scratch/
+
+# Composer dependencies
+vendor/
+
+# Logs
+*.log
+
+# OS artifacts
+.DS_Store
+Thumbs.db

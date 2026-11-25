@@ -41,8 +41,27 @@ if (!function_exists('env')) {
             return $val;
         }
 
+        if (isset($_ENV[$key]) && $_ENV[$key] !== '') {
+            $val = $_ENV[$key];
+            if ($val === 'true' || $val === '(true)') return true;
+            if ($val === 'false' || $val === '(false)') return false;
+            if ($val === 'null' || $val === '(null)') return null;
+            return $val;
+        }
+
+        if (isset($_SERVER[$key]) && $_SERVER[$key] !== '') {
+            $val = $_SERVER[$key];
+            if ($val === 'true' || $val === '(true)') return true;
+            if ($val === 'false' || $val === '(false)') return false;
+            if ($val === 'null' || $val === '(null)') return null;
+            return $val;
+        }
+
         $sysEnv = getenv($key);
-        if ($sysEnv !== false) {
+        if ($sysEnv !== false && $sysEnv !== '') {
+            if ($sysEnv === 'true' || $sysEnv === '(true)') return true;
+            if ($sysEnv === 'false' || $sysEnv === '(false)') return false;
+            if ($sysEnv === 'null' || $sysEnv === '(null)') return null;
             return $sysEnv;
         }
 
